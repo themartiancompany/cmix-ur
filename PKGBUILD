@@ -75,7 +75,7 @@ prepare() {
   _cxx="$( \
     _cxx_get)"
   sed \
-    "s/CC = clang++/CC = ${_cxx}/"  \
+    "s/clang++/${_cxx}/"  \
     -i \
     "${srcdir}/${tar}/makefile"
 }

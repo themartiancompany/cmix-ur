@@ -52,31 +52,46 @@ sha256sums=(
 
 _ccx_get() {
   local \
-    _ccx \
+    _cxx \
     _ccxs=()
-  _ccxs=(
-    "ccx"
+  _cxxs=(
+    "cxx"
     "g++"
     "clang++"
   ) 
-  _ccx="$( \
+  _cxx="$( \
     command \
       -v \
-      "${_ccxs[@]}" | \
+      "${_cxxs[@]}" | \
       awk \
         '{print $1}')"
   echo \
-    "${_ccx}"
+    "${_cxx}"
+}
+
+prepare() {
+  local \
+    _cxx
+  _cxx="$( \
+    _cxx_get)"
+  sed \
+    "s/CC = clang++/CC = ${_cxx}/"  \
+    -i \
+    "${srcdir}/${tar}/makefile"
 }
 
 build() {
   local \
-    _ccx
+    _cxx
   _ccx="$( \
-    _ccx_get)"
+    _cxx_get)"
   cd \
     "${_tar}"
-  CC="${_ccx}" \
+  export \
+    CC="${_cxx}" \
+    CXX="${_cxx}"
+  CC="${_cxx}" \
+  CXX="${_cxx}" \
   make
 }
 

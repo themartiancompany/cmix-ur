@@ -50,7 +50,7 @@ sha256sums=(
   SKIP
 )
 
-_ccx_get() {
+_cxx_get() {
   local \
     _cxx \
     _ccxs=()

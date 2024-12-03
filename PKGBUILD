@@ -8,7 +8,7 @@ _pkg=cmix
 pkgname="${_pkg}"
 pkgver=20
 pkgrel=1
-pkgdesc=(
+_pkgdesc=(
   "lossless data compression program aimed"
   "at optimizing compression ratio at the cost"
   "of high CPU/memory usage"

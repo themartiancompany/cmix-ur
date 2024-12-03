@@ -25,7 +25,7 @@ arch=(
   'pentium4'
   'i686'
 )
-_ns="byronkoll"
+_ns="byronknoll"
 url="https://www.${_ns}.com/${_pkg}.html"
 license=(
   'GPL-3.0-only'

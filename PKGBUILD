@@ -74,11 +74,10 @@ prepare() {
     _cxx
   _cxx="$( \
     _cxx_get)"
-  echo "${_cxx}"
   sed \
     -i \
     "s%clang++%${_cxx}%"  \
-    "${srcdir}/${tar}/makefile"
+    "${srcdir}/${_tar}/makefile"
 }
 
 build() {

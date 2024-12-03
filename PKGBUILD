@@ -50,9 +50,33 @@ sha256sums=(
   SKIP
 )
 
+_ccx_get() {
+  local \
+    _ccx \
+    _ccxs=()
+  _ccxs=(
+    "ccx"
+    "g++"
+    "clang++"
+  ) 
+  _ccx="$( \
+    command \
+      -v \
+      "${_ccxs[@]}" | \
+      awk \
+        '{print $1}')"
+  echo \
+    "${_ccx}"
+}
+
 build() {
+  local \
+    _ccx
+  _ccx="$( \
+    _ccx_get)"
   cd \
     "${_tar}"
+  CC="${_ccx}" \
   make
 }
 

@@ -76,7 +76,7 @@ prepare() {
     _cxx_get)"
   sed \
     -i \
-    "s%clang++%${_cxx}%"  \
+    "s%clang++-17%${_cxx}%"  \
     "${srcdir}/${_tar}/makefile"
 }
 

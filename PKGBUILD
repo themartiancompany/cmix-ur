@@ -47,7 +47,7 @@ source=(
   "${_tar}.tar.gz::${_url}/archive/refs/tags/v${pkgver}.tar.gz"
 )
 sha256sums=(
-  SKIP
+  'a95b0d7430d61b558731e7627f41e170cb7802d1a8a862f38628f8d921dc61b2'
 )
 
 _cxx_get() {
